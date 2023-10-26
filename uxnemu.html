@@ -30,6 +30,8 @@
 	emulator.screen.bgctx = emulator.bgCanvas.getContext("2d")
 	emulator.screen.fgctx = emulator.fgCanvas.getContext("2d")
 
+	emulator.screen.bgImage = emulator.screen.bgctx.createImageData(emulator.bgCanvas.width, emulator.bgCanvas.height);
+
 	emulator.fgCanvas.addEventListener("pointermove", emulator.pointer_callback);
 	emulator.fgCanvas.addEventListener("pointerdown", emulator.pointer_callback);
 	emulator.fgCanvas.addEventListener("pointerup", emulator.pointer_callback);

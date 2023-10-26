@@ -97,5 +97,6 @@ function Emu ()
 
 	this.screen_callback = () => {
 		this.uxn.eval(this.uxn.peek16(this.uxn.dev + 0x20))
+		this.screen.update_screen()
 	}
 }
