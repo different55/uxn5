@@ -19,40 +19,12 @@ Include the boot sequence in your website, and evaluate a program:
 </script>
 ```
 
-## Example
+## Including Rom
 
-An example html page can be found in `uxnemu.html`.
+If you would like to include a rom directly in the emulator, modify [boot.js](https://git.sr.ht/~rabbits/uxn5/tree/main/item/src/boot.js) and add the rom as compressed base64 [ulz](https://wiki.xxiivv.com/site/ulz_format.html) encoded string, like:
 
-To run a rom in this environment, execute:
 ```
-uxncli bin/format-js.rom [your-rom.rom] > bin/roms.js
-```
-
-Then open `uxnemu.html` in a web browser.
-
-## Devices
-
-- `00` system(missing)
-- `10` console(complete)
-- `20` screen(complete)
-- `30` audio(missing)
-- `80` controller(partial)
-- `90` mouse(complete)
-- `a0` file(missing)
-- `c0` datetime(partial)
-
-## Tests
-
-Build and run tests with reference emulator:
-
-```sh
-uxnasm etc/tests.tal bin/tests.rom && uxncli bin/tests.rom
-```
-
-Format tests for Javascript:
-
-```sh
-uxnasm etc/format.tal bin/format.rom && uxncli bin/format.rom bin/tests.rom > etc/program.js
+const boot_ulz = "ASYUyuASyu_7ASHhua...";
 ```
 
 ## Need a hand?
