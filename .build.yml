@@ -9,6 +9,6 @@ sources:
 tasks:
     - package: |
         cd uxn5
-        tar -czf ../out.tar.gz index.html pyur.svg src/
+        tar -czf ../out.tar.gz index.html media/ src/
     - upload: 
-        hut pages publish -d $site -s /uxn5  out.tar.gz
+        hut pages publish -d $site -s /uxn5 out.tar.gz
