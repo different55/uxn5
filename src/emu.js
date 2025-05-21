@@ -32,6 +32,7 @@ function Emu (embed)
 			/* start devices */
 			this.console.init()
 			this.screen.init()
+			this.controller.init()
 			/* Reveal */
 			document.body.className = emulator.embed ? "embed" : "default"
 			document.title = "Varvara Emulator"

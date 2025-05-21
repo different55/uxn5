@@ -29,8 +29,6 @@ function Screen(emu)
 		this.display.addEventListener("pointerdown", emu.mouse.on_down)
 		this.display.addEventListener("pointerup", emu.mouse.on_up)
 		this.display.addEventListener("wheel", emu.mouse.on_scroll)
-		window.addEventListener("keydown", emu.controller.on_keybutton)
-		window.addEventListener("keyup", emu.controller.on_keybutton)
 		this.set_zoom(1)
 		this.resize(512, 320, 1)
 	}
@@ -40,6 +38,8 @@ function Screen(emu)
 		this.y1 = clamp(this.y1, 0, this.height);
 		this.x2 = clamp(this.x2, 0, this.width);
 		this.y2 = clamp(this.y2, 0, this.height);
+		console.log(this.x1, this.y1, this.x2, this.y2, `(${this.width}x${this.height})`)
+
 		return this.x2 > this.x1 && this.y2 > this.y1;
 	}
 
