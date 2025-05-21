@@ -91,10 +91,7 @@ function Emu (embed)
 		this.screen.set_zoom(default_zoom ? default_zoom : 1)
 		this.uxn.load(rom).eval(0x0100);
 		share.setROM(rom);
-		save.setROM(rom)
-		if (fromURL) {
-			save.setROM(rom);
-		}
+		save.setROM(rom);
 	}
 
 	this.dei = (port) => {
