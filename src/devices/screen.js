@@ -38,8 +38,6 @@ function Screen(emu)
 		this.y1 = clamp(this.y1, 0, this.height);
 		this.x2 = clamp(this.x2, 0, this.width);
 		this.y2 = clamp(this.y2, 0, this.height);
-		console.log(this.x1, this.y1, this.x2, this.y2, `(${this.width}x${this.height})`)
-
 		return this.x2 > this.x1 && this.y2 > this.y1;
 	}
 
@@ -194,7 +192,7 @@ function Screen(emu)
 				for(i = 0; i <= rML; i++, x += dyx, y += dxy, rA += addr_incr) {
 					let xmar = MAR(x), ymar = MAR(y);
 					let xmar2 = MAR2(x), ymar2 = MAR2(y);
-					if(xmar < wmar && ymar2 < hmar2) {
+					if(xmar >= 0 && xmar < wmar && ymar2 >= 0 && ymar2 < hmar2) {
 						let by = ymar2 * wmar2;
 						for(ay = ymar * wmar2, qy = qfy; ay < by; ay += wmar2, qy += fy) {
 							let ch1 = emu.uxn.ram[rA + qy], ch2 = emu.uxn.ram[rA + qy + 8] << 1, bx = xmar2 + ay;
@@ -210,7 +208,7 @@ function Screen(emu)
 				for(i = 0; i <= rML; i++, x += dyx, y += dxy, rA += addr_incr) {
 					let xmar = MAR(x), ymar = MAR(y);
 					let xmar2 = MAR2(x), ymar2 = MAR2(y);
-					if(xmar < wmar && ymar2 < hmar2) {
+					if(xmar >= 0 && xmar < wmar && ymar2 >= 0 && ymar2 < hmar2) {
 						let by = ymar2 * wmar2;
 						for(ay = ymar * wmar2, qy = qfy; ay < by; ay += wmar2, qy += fy) {
 							let ch1 = emu.uxn.ram[rA + qy], bx = xmar2 + ay;
