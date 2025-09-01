@@ -17,8 +17,6 @@ function Emu (embed)
 	this.screen = new Screen(this)
 	this.datetime = new DateTime(this)
 	this.mouse = new Mouse(this)
-	this.file1 = new FileDevice(this, 0xa0)
-	this.file2 = new FileDevice(this, 0xb0)
 
 	if (typeof UxnWASM !== 'undefined') {
 		console.log("Using WebAssembly core")
@@ -109,8 +107,6 @@ function Emu (embed)
 			case 0x00: this.system.deo(port); break;
 			case 0x10: this.console.deo(port); break;
 			case 0x20: this.screen.deo(port); break;
-			case 0xa0: this.file1.deo(port); break;
-			case 0xb0: this.file2.deo(port); break;
 		}
 	}
 }
