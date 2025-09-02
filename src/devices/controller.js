@@ -58,6 +58,9 @@ function Controller(emu)
 
 	this.on_keybutton = (event) => {
 		let mask = 0;
+		// Also catch cmd
+		if(event.metaKey)
+			mask = 0x01;
 		switch (event.keyCode) {
 		case 17: // Control
 			mask = 0x01;
