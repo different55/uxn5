@@ -103,7 +103,7 @@ function Controller(emu)
 			emu.uxn.eval(peek16(emu.uxn.dev, 0x80))
 		if(event.type == "keydown")
 			emu.uxn.dev[0x83] = 0;
-		if(document.activeElement != emu.console.input_el && event.key != 'v' && event.key != 'c') {
+		if(document.activeElement != emu.console.input_el && event.key != 'v' && event.key != 'V') {
 			event.preventDefault();
 		}
 	}
