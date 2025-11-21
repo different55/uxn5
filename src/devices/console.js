@@ -7,16 +7,22 @@ function Console(emu)
 	this.error_el = null
 
 	this.init = () => {
-		// Hide until vector
 		this.input_el = document.getElementById("console_input")
-		this.input_el.style.display = "none"
-		this.input_el.addEventListener("keyup", this.on_console);
-		// Hide until stdout
+		this.input_el.addEventListener("keyup", this.on_console)
 		this.write_el = document.getElementById("console_std")
-		this.write_el.style.display = "none"
-		// Hide until stderr
 		this.error_el = document.getElementById("console_err")
+		this.start()
+	}
+
+	this.start = () => {
+		// Hide until vector
+		this.input_el.style.display = "none"
+		// Hide until stdout
+		this.write_el.style.display = "none"
+		this.write_el.innerHTML = ""
+		// Hide until stderr
 		this.error_el.style.display = "none"
+		this.error_el.innerHTML = ""
 	}
 
 	this.write = (char) => {
