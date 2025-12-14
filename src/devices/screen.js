@@ -104,8 +104,7 @@ function Screen(emu)
 				}
 			}
 		}
-		this.x1 = this.y1 = 9999;
-		this.x2 = this.y2 = 0;
+		this.x1 = this.y1 = this.x2 = this.y2 = 0;
 	}
 
 	let rX = 0, rY = 0, rA = 0, rMX = 0, rMY = 0, rMA = 0, rML = 0, rDX = 0, rDY = 0;

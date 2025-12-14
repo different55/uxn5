@@ -66,7 +66,7 @@ function Emu (embed)
 				window.requestAnimationFrame(() => {
 					if(this.screen.vector)
 						this.uxn.eval(this.screen.vector)
-					if(this.screen.x2 && this.screen.y2 && this.screen.changed()) {
+					if(this.screen.changed()) {
 						let x = this.screen.x1, y = this.screen.y1;
 						let w = this.screen.x2 - x, h = this.screen.y2 - y;
 						this.screen.redraw()
