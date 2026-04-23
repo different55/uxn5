@@ -172,8 +172,8 @@ function Screen(emu)
 				if(rX >= 0 && rY >= 0 && rX < len && rY < this.height)
 					layer[MAR(rX) + MAR(rY) * len] = color;
 				if(!this.repaint) this.change(rX, rY, rX + 1, rY + 1);
-				if(rMX) rX += ctrl & 0x10 ? -rDX : rDX;
-				if(rMY) rY += ctrl & 0x20 ? -rDY : rDY;
+				if(rMX) rX += ctrl & 0x10 ? -1 : 1;
+				if(rMY) rY += ctrl & 0x20 ? -1 : 1;
 			}
 			return;
 		}
